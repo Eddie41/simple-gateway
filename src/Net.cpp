@@ -179,7 +179,7 @@ int Net::run()
             {
                 LOG(INFO) << "[EVENT:READ] [fd:" << events[i].data.fd << "]";
             
-                int &sockfd = events[i].data.fd;
+                int sockfd = events[i].data.fd;
                 if(sockfd < 0)
                 {
                     LOG(ERROR) <<  "epoll event get error fd";
